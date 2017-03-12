@@ -7,10 +7,17 @@
 {% endblock %}
 
 {% block ocplatform_body %}
+    <div style="float: left; overflow: hidden; height: 70px; width: 200px; ">
+        {% if advert.image is not null %}
+            <img src="{{ advert.image.url }}" alt="{{ advert.image.alt }}">
+        {% endif %}
+    </div>
+    <div style="float: right">
+        <h2>{{ advert.title }}</h2>
+        <i>Par {{ advert.author }}, le {{ advert.date|date('d/m/Y') }}</i>
+    </div>
 
-    <h2>{{ advert.title }}</h2>
-    <i>Par {{ advert.author }}, le {{ advert.date|date('d/m/Y') }}</i>
-
+    <br><br><br><br><br>
     <div class="well">
         {{ advert.content }}
     </div>
